@@ -1,0 +1,231 @@
+$formatting-char-color: hsla(0, 0%, 95%, 1);
+$quote-bg-color: hsl(60, 70%, 95%);
+$default: hsla(0, 0%, 0%, 1);
+$tag-color: hsla(120, 70%, 30%, 1);
+$link-color: hsla(240, 70%, 50%, 1);
+$unresolved-color: hsla(0, 70%, 50%, 1);
+$h1-size: 36px;
+$h2-size: 34px;
+$h3-size: 28px;
+$h4-size: 24px;
+$h5-size: 20px;
+$h6-size: 16px;
+
+.markdown-source-view,
+.markdown-preview-view {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.markdown-preview-view {
+    h1 {
+        font-size: $h1-size;
+    }
+
+    h2 {
+        font-size: $h2-size;
+    }
+
+    h3 {
+        font-size: $h3-size;
+    }
+
+    h4 {
+        font-size: $h4-size;
+    }
+
+    h5 {
+        font-size: $h5-size;
+    }
+
+    h6 {
+        font-size: $h6-size;
+    }
+
+    blockquote {
+        background-color: $quote-bg-color;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .internal-link.is-unresolved {
+        color: $unresolved-color;
+        opacity: 1;
+    }
+
+    h1 {
+        border-bottom: 1px solid $default;
+        padding-bottom: 6px;
+    }
+
+    h6 {
+        color: $default;
+    }
+}
+
+.cm-s-obsidian {
+    @for $i from 1 to 6 {
+        .cm-header-#{$i} {
+            font-size: inherit;
+        }
+    }
+
+    .HyperMD-header-1 {
+        font-size: $h1-size;
+    }
+
+    .HyperMD-header-2 {
+        font-size: $h2-size;
+    }
+
+    .HyperMD-header-3 {
+        font-size: $h3-size;
+    }
+
+    .HyperMD-header-4 {
+        font-size: $h4-size;
+    }
+
+    .HyperMD-header-5 {
+        font-size: $h5-size;
+    }
+
+    .HyperMD-header-6 {
+        font-size: $h6-size;
+    }
+
+    .HyperMD-header-1 {
+        border-bottom: 1px solid $default;
+        padding-bottom: 0px;
+    }
+
+    span.cm-quote {
+        color: $default;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    span.cm-link,
+    span.cm-hmd-internal-link {
+        color: $link-color;
+        text-decoration: underline;
+    }
+
+    .HyperMD-header > span > span {
+        &.cm-formatting-header {
+            display: inline-block;
+        }
+
+        &.cm-formatting-header-1 {
+            margin-left: -30px !important;
+            max-width: 30px !important;
+        }
+
+        &.cm-formatting-header-2 {
+            margin-left: -52px !important;
+            max-width: 52px !important;
+        }
+
+        &.cm-formatting-header-3 {
+            margin-left: -66px !important;
+            max-width: 66px !important;
+        }
+
+        &.cm-formatting-header-4 {
+            margin-left: -73px !important;
+            max-width: 73px !important;
+        }
+
+        &.cm-formatting-header-5 {
+            margin-left: -75px !important;
+            max-width: 75px !important;
+        }
+
+        &.cm-formatting-header-6 {
+            margin-left: -72px !important;
+            max-width: 72px !important;
+        }
+    }
+
+    span.cm-formatting-highlight {
+        color: darken($formatting-char-color, 20%);
+    }
+
+    span.cm-hmd-barelink {
+        background-color: $quote-bg-color;
+        color: $default;
+        text-decoration: none;
+
+        &.cm-formatting {
+            color: darken($formatting-char-color, 20%);
+        }
+    }
+}
+
+span.cm-formatting.cm-formatting-quote {
+    padding-right: 0;
+}
+
+.cm-s-obsidian span.cm-hashtag,
+.tag {
+    color: $tag-color;
+}
+
+ul {
+    ul {
+        list-style-type: circle !important;
+        padding-left: 20px;
+
+        ul {
+            list-style-type: square !important;
+
+            ul {
+                list-style-type: disc !important;
+
+                ul {
+                    list-style-type: circle !important;
+
+                    ul {
+                        list-style-type: square !important;
+
+                        ul {
+                            list-style-type: disc !important;
+
+                            ul {
+                                list-style-type: circle !important;
+
+                                ul {
+                                    list-style-type: square !important;
+
+                                    ul {
+                                        list-style-type: disc !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.HyperMD-quote {
+    background-color: $quote-bg-color !important;
+    padding-bottom: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 10px !important;
+}
+
+.cm-formatting-header {
+    color: $formatting-char-color;
+}
+
+.CodeMirror-lines {
+    margin-left: 70px;
+}
+
+a {
+    color: $link-color;
+}

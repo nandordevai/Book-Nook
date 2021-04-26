@@ -1,0 +1,225 @@
+.markdown-source-view,
+.markdown-preview-view {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.markdown-preview-view h1 {
+  font-size: 36px;
+}
+
+.markdown-preview-view h2 {
+  font-size: 34px;
+}
+
+.markdown-preview-view h3 {
+  font-size: 28px;
+}
+
+.markdown-preview-view h4 {
+  font-size: 24px;
+}
+
+.markdown-preview-view h5 {
+  font-size: 20px;
+}
+
+.markdown-preview-view h6 {
+  font-size: 16px;
+}
+
+.markdown-preview-view blockquote {
+  background-color: #fbfbe9;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.markdown-preview-view .internal-link.is-unresolved {
+  color: #d92626;
+  opacity: 1;
+}
+
+.markdown-preview-view h1 {
+  border-bottom: 1px solid black;
+  padding-bottom: 6px;
+}
+
+.markdown-preview-view h6 {
+  color: black;
+}
+
+.cm-s-obsidian .cm-header-1 {
+  font-size: inherit;
+}
+
+.cm-s-obsidian .cm-header-2 {
+  font-size: inherit;
+}
+
+.cm-s-obsidian .cm-header-3 {
+  font-size: inherit;
+}
+
+.cm-s-obsidian .cm-header-4 {
+  font-size: inherit;
+}
+
+.cm-s-obsidian .cm-header-5 {
+  font-size: inherit;
+}
+
+.cm-s-obsidian .HyperMD-header-1 {
+  font-size: 36px;
+}
+
+.cm-s-obsidian .HyperMD-header-2 {
+  font-size: 34px;
+}
+
+.cm-s-obsidian .HyperMD-header-3 {
+  font-size: 28px;
+}
+
+.cm-s-obsidian .HyperMD-header-4 {
+  font-size: 24px;
+}
+
+.cm-s-obsidian .HyperMD-header-5 {
+  font-size: 20px;
+}
+
+.cm-s-obsidian .HyperMD-header-6 {
+  font-size: 16px;
+}
+
+.cm-s-obsidian .HyperMD-header-1 {
+  border-bottom: 1px solid black;
+  padding-bottom: 0px;
+}
+
+.cm-s-obsidian span.cm-quote {
+  color: black;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+  color: #2626d9;
+  text-decoration: underline;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header {
+  display: inline-block;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header-1 {
+  margin-left: -30px !important;
+  max-width: 30px !important;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header-2 {
+  margin-left: -52px !important;
+  max-width: 52px !important;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header-3 {
+  margin-left: -66px !important;
+  max-width: 66px !important;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header-4 {
+  margin-left: -73px !important;
+  max-width: 73px !important;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header-5 {
+  margin-left: -75px !important;
+  max-width: 75px !important;
+}
+
+.cm-s-obsidian .HyperMD-header > span > span.cm-formatting-header-6 {
+  margin-left: -72px !important;
+  max-width: 72px !important;
+}
+
+.cm-s-obsidian span.cm-formatting-highlight {
+  color: #bfbfbf;
+}
+
+.cm-s-obsidian span.cm-hmd-barelink {
+  background-color: #fbfbe9;
+  color: black;
+  text-decoration: none;
+}
+
+.cm-s-obsidian span.cm-hmd-barelink.cm-formatting {
+  color: #bfbfbf;
+}
+
+span.cm-formatting.cm-formatting-quote {
+  padding-right: 0;
+}
+
+.cm-s-obsidian span.cm-hashtag,
+.tag {
+  color: #178217;
+}
+
+ul ul {
+  list-style-type: circle !important;
+  padding-left: 20px;
+}
+
+ul ul ul {
+  list-style-type: square !important;
+}
+
+ul ul ul ul {
+  list-style-type: disc !important;
+}
+
+ul ul ul ul ul {
+  list-style-type: circle !important;
+}
+
+ul ul ul ul ul ul {
+  list-style-type: square !important;
+}
+
+ul ul ul ul ul ul ul {
+  list-style-type: disc !important;
+}
+
+ul ul ul ul ul ul ul ul {
+  list-style-type: circle !important;
+}
+
+ul ul ul ul ul ul ul ul ul {
+  list-style-type: square !important;
+}
+
+ul ul ul ul ul ul ul ul ul ul {
+  list-style-type: disc !important;
+}
+
+.HyperMD-quote {
+  background-color: #fbfbe9 !important;
+  padding-bottom: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 10px !important;
+}
+
+.cm-formatting-header {
+  color: #f2f2f2;
+}
+
+.CodeMirror-lines {
+  margin-left: 70px;
+}
+
+a {
+  color: #2626d9;
+}
+/*# sourceMappingURL=booknook.css.map */
