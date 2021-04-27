@@ -1,65 +1,92 @@
-$formatting-char-color: hsla(0, 0%, 95%, 1);
-$quote-bg-color: hsl(60, 70%, 95%);
-$default: hsla(0, 0%, 0%, 1);
-$tag-color: hsla(120, 70%, 30%, 1);
-$link-color: hsla(240, 70%, 50%, 1);
-$unresolved-color: hsla(0, 70%, 50%, 1);
-$h1-size: 36px;
-$h2-size: 34px;
-$h3-size: 28px;
-$h4-size: 24px;
-$h5-size: 20px;
-$h6-size: 16px;
+// you can set one or both of these to false:
+$hide-status-bar: true;
+$hide-sidebars: true;
+
+.theme-light {
+    --background-primary: hsl(0, 0%, 100%);
+    --background-primary-alt: hsl(216, 33%, 97%);
+    --background-secondary: hsl(220, 13%, 95%);
+    --background-secondary-alt: hsl(216, 10%, 90%);
+    --background-modifier-border: hsl(0, 0%, 87%);
+    --background-modifier-form-field: hsl(0, 0%, 100%);
+    --background-modifier-form-field-highlighted: hsl(0, 0%, 100%);
+    --background-modifier-box-shadow: hsla(0, 0%, 0%, 0.1);
+    --background-modifier-success: hsl(148, 58%, 77%);
+    --background-modifier-error: hsl(0, 100%, 30%);
+    --background-modifier-error-rgb: 230, 135, 135;
+    --background-modifier-error-hover: hsl(0, 100%, 37%);
+    --background-modifier-cover: hsla(0, 0%, 0%, 0.8);
+    --text-accent: hsl(250, 54%, 59%);
+    --text-accent-hover: hsl(248, 71%, 66%);
+    --text-normal: hsl(210, 10%, 20%);
+    --text-muted: hsl(0, 0%, 53%);
+    --text-muted-rgb: 136, 136, 136;
+    --text-faint: hsl(0, 0%, 80%);
+    --text-error: hsla(0, 70%, 50%, 1);
+    --text-error-hover: hsl(0, 100%, 30%);
+    --text-highlight-bg: hsla(60, 100%, 50%, 0.4);
+    --text-highlight-bg-active: hsla(30, 100%, 50%, 0.4);
+    --text-selection: hsla(209, 100%, 90%, 0.99);
+    --text-on-accent: hsl(0, 0%, 95%);
+    --interactive-normal: hsl(220, 13%, 95%);
+    --interactive-hover: hsl(0, 0%, 91%);
+    --interactive-accent: hsl(248, 59%, 64%);
+    --interactive-accent-rgb: 123, 108, 217;
+    --interactive-accent-hover: hsl(248, 70%, 68%);
+    --interactive-success: hsl(107, 100%, 23%);
+    --scrollbar-active-thumb-bg: hsla(0, 0%, 0%, 0.2);
+    --scrollbar-bg: hsla(0, 0%, 0%, 0.05);
+    --scrollbar-thumb-bg: hsla(0, 0%, 0%, 0.1);
+    --highlight-mix-blend-mode: darken;
+    --quote-bg: hsl(60, 70%, 95%);
+    --tag: hsla(120, 70%, 30%, 1);
+    --link: hsla(240, 70%, 50%, 1);
+    --h1-size: 36px;
+    --h2-size: 34px;
+    --h3-size: 28px;
+    --h4-size: 24px;
+    --h5-size: 20px;
+    --h6-size: 16px;
+    --tab-header-height: 36px;
+    --default-font-size: 14px;
+    --sidebar-width: 50px;
+}
+
+body {
+    font-family: system-ui;
+}
 
 .markdown-source-view,
 .markdown-preview-view {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif !important;
 }
 
 .markdown-preview-view {
-    h1 {
-        font-size: $h1-size;
-    }
-
-    h2 {
-        font-size: $h2-size;
-    }
-
-    h3 {
-        font-size: $h3-size;
-    }
-
-    h4 {
-        font-size: $h4-size;
-    }
-
-    h5 {
-        font-size: $h5-size;
-    }
-
-    h6 {
-        font-size: $h6-size;
+    @for $i from 1 to 6 {
+        h#{$i} {
+            font-size: var(--h#{$i}-size);
+        }
     }
 
     blockquote {
-        background-color: $quote-bg-color;
+        background-color: var(--quote-bg);
         border: none;
         border-radius: 0;
         margin: 0;
     }
 
     .internal-link.is-unresolved {
-        color: $unresolved-color;
+        color: var(--text-error);
         opacity: 1;
     }
 
     h1 {
-        border-bottom: 1px solid $default;
+        border-bottom: 1px solid var(--text-normal);
         padding-bottom: 6px;
     }
 
     h6 {
-        color: $default;
+        color: var(--text-normal);
     }
 }
 
@@ -68,47 +95,24 @@ $h6-size: 16px;
         .cm-header-#{$i} {
             font-size: inherit;
         }
+
+        .HyperMD-header-#{$i} {
+            font-size: var(--h#{$i}-size);
+        }
     }
 
     .HyperMD-header-1 {
-        font-size: $h1-size;
-    }
-
-    .HyperMD-header-2 {
-        font-size: $h2-size;
-    }
-
-    .HyperMD-header-3 {
-        font-size: $h3-size;
-    }
-
-    .HyperMD-header-4 {
-        font-size: $h4-size;
-    }
-
-    .HyperMD-header-5 {
-        font-size: $h5-size;
-    }
-
-    .HyperMD-header-6 {
-        font-size: $h6-size;
-    }
-
-    .HyperMD-header-1 {
-        border-bottom: 1px solid $default;
+        border-bottom: 1px solid var(--text-normal);
         padding-bottom: 0px;
     }
 
     span.cm-quote {
-        color: $default;
-        padding-bottom: 10px;
-        padding-right: 10px;
-        padding-top: 10px;
+        color: var(--text-normal);
     }
 
     span.cm-link,
     span.cm-hmd-internal-link {
-        color: $link-color;
+        color: var(--link);
         text-decoration: underline;
     }
 
@@ -149,16 +153,16 @@ $h6-size: 16px;
     }
 
     span.cm-formatting-highlight {
-        color: darken($formatting-char-color, 20%);
+        color: var(--text-faint);
     }
 
     span.cm-hmd-barelink {
-        background-color: $quote-bg-color;
-        color: $default;
+        background-color: var(--quote-bg);
+        color: var(--text-normal);
         text-decoration: none;
 
         &.cm-formatting {
-            color: darken($formatting-char-color, 20%);
+            color: var(--text-faint);
         }
     }
 }
@@ -169,7 +173,7 @@ span.cm-formatting.cm-formatting-quote {
 
 .cm-s-obsidian span.cm-hashtag,
 .tag {
-    color: $tag-color;
+    color: var(--tag);
 }
 
 ul {
@@ -212,14 +216,14 @@ ul {
 }
 
 .HyperMD-quote {
-    background-color: $quote-bg-color !important;
+    background-color: var(--quote-bg) !important;
     padding-bottom: 10px !important;
     padding-right: 10px !important;
     padding-top: 10px !important;
 }
 
 .cm-formatting-header {
-    color: $formatting-char-color;
+    color: var(--text-faint);
 }
 
 .CodeMirror-lines {
@@ -227,5 +231,143 @@ ul {
 }
 
 a {
-    color: $link-color;
+    color: var(--link);
+}
+
+.nav-folder-title,
+.nav-file-title,
+.tree-item-inner,
+.workspace-tab-header-inner-icon,
+.view-header-icon,
+.view-action,
+.side-dock-ribbon-action,
+.nav-action-button {
+    color: var(--text-normal) !important;
+}
+
+.workspace-tab-header-container {
+    height: var(--tab-header-height);
+}
+
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
+.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+    height: calc(100% - var(--tab-header-height));
+}
+
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header {
+    background-color: var(--background-secondary-alt);
+}
+
+.workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
+    background: none;
+}
+
+@if $hide-status-bar {
+    .status-bar {
+        display: none;
+    }
+}
+
+.CodeMirror-line .cm-formatting-header {
+    opacity: 0;
+}
+
+.CodeMirror-activeline .cm-formatting-header {
+    opacity: 1;
+}
+
+.workspace-split.mod-left-split {
+    @if $hide-sidebars {
+        margin-left: 0px;
+    } @else {
+        margin-left: var(--sidebar-width);
+    }
+}
+
+.workspace-split.mod-right-split {
+    @if $hide-sidebars {
+        margin-right: 0px;
+    } @else {
+        margin-right: var(--sidebar-width);
+    }
+}
+
+.workspace-tabs .workspace-leaf,
+.workspace-tab-header.is-active {
+    background-color: var(--background-primary-alt);
+}
+
+.nav-action-button {
+    margin: 0 3px 0px 3px;
+}
+
+.workspace-split.mod-left-split .workspace-tabs .workspace-leaf {
+    border-top-left-radius: 0;
+}
+
+.workspace-split.mod-right-split .workspace-tabs .workspace-leaf {
+    border-top-right-radius: 0;
+}
+
+.nav-folder.mod-root > .nav-file-title,
+.nav-folder.mod-root > .nav-folder-title {
+    font-size: var(--default-font-size);
+    text-transform: uppercase;
+}
+
+.titlebar {
+    background-color: var(--background-secondary-alt);
+
+    &-text {
+        letter-spacing: 0px;
+    }
+
+    &-inner {
+        color: var(--text-normal);
+    }
+}
+
+.view-header-title,
+.backlink-pane {
+    font-size: var(--default-font-size);
+}
+
+.workspace {
+    background-color: var(--background-secondary-alt);
+
+    &-ribbon {
+        width: var(--sidebar-width);
+
+        &.mod-right {
+            background-color: hsla(0, 0%, 100%, 1);
+            @if $hide-sidebars {
+                display: none;
+            } @else {
+                border-left: 1px solid var(--background-modifier-border);
+            }
+        }
+
+        &.mod-left {
+            background-color: hsla(0, 0%, 100%, 1);
+            @if $hide-sidebars {
+                display: none;
+            } @else {
+                border-right: 1px solid var(--background-modifier-border);
+            }
+        }
+
+        height: calc(100% - var(--tab-header-height));
+        top: var(--tab-header-height);
+
+        &-collapse-btn {
+            color: var(--text-normal) !important;
+            margin-top: 0;
+            text-align: center;
+        }
+    }
+}
+
+.side-dock-settings {
+    margin-top: 0;
+    border-top: 1px solid var(--background-modifier-border);
 }
